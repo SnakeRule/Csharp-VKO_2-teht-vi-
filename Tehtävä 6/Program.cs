@@ -41,7 +41,7 @@ namespace Tehtävä_6
                 // Switch case based on menu selection
                 switch(input)
                 {
-                    case 1:
+                    case 1: // This is for pouring a small beer
                         {
                             beertap.Usetap();
                             beertap.Pour_smallbeer();
@@ -49,14 +49,14 @@ namespace Tehtävä_6
                             break;
                         }
 
-                    case 2:
+                    case 2: // This is for pouring a medium beer
                         {
                             beertap.Usetap();
                             beertap.Pour_mediumbeer();
                             beertap.Usetap();
                             break;
                         }
-                    case 3:
+                    case 3: // This is for pouring a large beer
                         {
                             beertap.Usetap();
                             beertap.Pour_largebeer();

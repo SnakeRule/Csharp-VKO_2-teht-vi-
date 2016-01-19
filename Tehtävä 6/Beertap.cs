@@ -23,8 +23,8 @@ namespace Tehtävä_6
         public int Largebeers { get; set; }
         public bool tap_onoff { get; set; }
 
-        //Method for pouring small beer
 
+        // Method for using the tap. This only really has cosmetic uses
         public void Usetap()
         {
             if (tap_onoff == false)
@@ -33,7 +33,7 @@ namespace Tehtävä_6
                 Console.ReadKey();
                 Console.Clear();
                 Console.WriteLine("Pouring...");
-                System.Threading.Thread.Sleep(2000);
+                System.Threading.Thread.Sleep(2000); // System waits for 2 seconds before continuing
                 tap_onoff = true;
             }
             else
@@ -45,6 +45,7 @@ namespace Tehtävä_6
             }
         }
 
+        //Method for pouring small beer
         public void Pour_smallbeer()
         {
             Console.WriteLine("You pour a tasty small beer");
