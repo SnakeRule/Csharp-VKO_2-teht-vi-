@@ -21,8 +21,30 @@ namespace Tehtävä_6
         public int Smallbeers { get; set; }
         public int Mediumbeers { get; set; }
         public int Largebeers { get; set; }
+        public bool tap_onoff { get; set; }
 
         //Method for pouring small beer
+
+        public void Usetap()
+        {
+            if (tap_onoff == false)
+            {
+                Console.WriteLine("Press any button to open tap");
+                Console.ReadKey();
+                Console.Clear();
+                Console.WriteLine("Pouring...");
+                System.Threading.Thread.Sleep(2000);
+                tap_onoff = true;
+            }
+            else
+            {
+                Console.WriteLine("Press any button to close tap");
+                Console.ReadKey();
+                Console.Clear();
+                tap_onoff = false;
+            }
+        }
+
         public void Pour_smallbeer()
         {
             Console.WriteLine("You pour a tasty small beer");
@@ -43,16 +65,5 @@ namespace Tehtävä_6
             Largebeers++;
         }
 
-        //Method for checking how drunk you are
-        public void How_drunk()
-        {
-            Console.WriteLine("You have {0} ‰ of alcohol in your blood.", (Smallbeers * 0.1 + Mediumbeers * 0.3 + Largebeers * 0.5));
-        }
-
-        //Method for checking how much money has been spent
-        public void Money_spent()
-        {
-            Console.WriteLine( "You have spent {0} euros." ,Smallbeers * 2 + Mediumbeers * 3 + Largebeers * 5);
-        }
     }
 }

@@ -21,6 +21,7 @@ namespace Tehtävä_6
         {
             //Creating object beertap
             Beertap beertap = new Beertap();
+            Customer customer = new Customer();
 
             int input;
             Console.WriteLine("Welcome to the beer pouring/drinking simulator!");
@@ -42,28 +43,36 @@ namespace Tehtävä_6
                 {
                     case 1:
                         {
+                            beertap.Usetap();
                             beertap.Pour_smallbeer();
+                            beertap.Usetap();
                             break;
                         }
 
                     case 2:
                         {
+                            beertap.Usetap();
                             beertap.Pour_mediumbeer();
+                            beertap.Usetap();
                             break;
                         }
                     case 3:
                         {
+                            beertap.Usetap();
                             beertap.Pour_largebeer();
+                            beertap.Usetap();
                             break;
                         }
                     case 4:
                         {
-                            beertap.How_drunk();
+                            //values from beertap copied to customer
+                            customer.How_drunk(beertap.Smallbeers, beertap.Mediumbeers, beertap.Largebeers);
                             break;
                         }
                     case 5:
                         {
-                            beertap.Money_spent();
+                            //values from beertap copied to customer
+                            customer.Money_spent(beertap.Smallbeers, beertap.Mediumbeers, beertap.Largebeers);
                             break;
                         }
                     case 6:
