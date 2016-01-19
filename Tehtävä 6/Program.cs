@@ -10,12 +10,15 @@ namespace Tehtävä_6
     {
         static void Main(string[] args)
         {
+            //Creating object beertap
             Beertap beertap = new Beertap();
 
             int input;
             Console.WriteLine("Welcome to the beer pouring/drinking simulator!");
+            Console.WriteLine();
             do
             {
+                // Menu
                 Console.WriteLine("1. Pour small beer");
                 Console.WriteLine("2. Pour medium beer");
                 Console.WriteLine("3. Pour Large beer");
@@ -25,6 +28,7 @@ namespace Tehtävä_6
                 input = int.Parse(Console.ReadLine());
                 Console.Clear();
 
+                // Switch case based on menu selection
                 switch(input)
                 {
                     case 1:
@@ -60,7 +64,7 @@ namespace Tehtävä_6
                         }
                 }
 
-            } while (input != 6);
+            } while (input != 6); // Loop breaks if input is 6
 
             Console.ReadLine();
         }

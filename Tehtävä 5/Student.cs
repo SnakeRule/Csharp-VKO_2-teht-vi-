@@ -22,7 +22,7 @@ namespace Tehtävä_5
         public int Age { get; set; }
 
 
-        //Method for aging up at student
+        //Method for aging up a student
         public void ageup()
         {
             Age++;
