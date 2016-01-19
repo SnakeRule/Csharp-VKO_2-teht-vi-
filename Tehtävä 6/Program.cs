@@ -62,6 +62,7 @@ namespace Tehtävä_6
                             Console.WriteLine("Loser");
                             break;
                         }
+                    default: break;
                 }
 
             } while (input != 6); // Loop breaks if input is 6
