@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+* Copyright (C) Jere-Joonas Valtanen
+*
+* This file is part of JAMK object oriented programming course
+*
+* Created: 19.1.2016
+*Author: Jere-Joonas Valtanen
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,13 +36,53 @@ namespace Tehtävä_5
                 students[i].Age = int.Parse(Console.ReadLine());
             }
 
-            for (int i = 0; i != 5; i++)
+            int input = 0;
+
+            do
             {
-                Console.WriteLine("Student slot : " + (i + 1));
-                Console.WriteLine("First Name : {0}", students[i].Firstname);
-                Console.WriteLine("Last Name : {0}", students[i].Lastname);
-                Console.WriteLine("age : {0}", students[i].Age);
-            }
+                //Menu
+            Console.WriteLine("Menu");
+            Console.WriteLine("1. Increase age");
+            Console.WriteLine("2. Show all students");
+            Console.WriteLine("3. Quit");
+
+            input = int.Parse(Console.ReadLine());
+
+                switch (input)
+                {
+
+                    case 1: // Increase age of a student
+                        {
+
+                            do
+                            {
+                                Console.WriteLine("Which student should get older 1-5?");
+                                input = int.Parse(Console.ReadLine());
+                                input--;
+                            } while (input < 0 || input > 4);
+
+                            //jumping to method ageup
+                            students[input].ageup();
+
+                            Console.WriteLine("Student {0} is now {1} years old.", students[input].Firstname, students[input].Age);
+                            break;
+                        }
+
+                    case 2: //Accessing method printdata five times through for loop
+                        {
+                            for (int i = 0; i != 5; i++)
+                            {
+                                students[i].printdata();
+                            }
+                            break;
+                        }
+                    case 3: // Quit
+                        {
+                            Console.WriteLine("Goodbye!");
+                            break;
+                        }
+                }
+            } while (input != 3);
         }
     }
 }
